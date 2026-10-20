@@ -90,7 +90,7 @@ if(Test-Path -LiteralPath $oldMedia){New-Item -ItemType Directory -Force $rollba
 
 Write-Host 'Uygulama kuruluyor...'
 
-$setup=Start-Process -FilePath (Join-Path $packageRoot 'DersPusulasi-0.10.0-Kurulum.exe') -ArgumentList @('/S',('/D='+$InstallDir)) -WindowStyle Hidden -Wait -PassThru
+$setup=Start-Process -FilePath (Join-Path $packageRoot 'DersPusulasi-0.10.1-Kurulum.exe') -ArgumentList @('/S',('/D='+$InstallDir)) -WindowStyle Hidden -Wait -PassThru
 
 if($setup.ExitCode-ne 0){throw ('Application installation failed: '+$setup.ExitCode)}
 

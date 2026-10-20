@@ -8,7 +8,7 @@ root=Path(__file__).resolve().parents[1]
 
 stage=root/'.distribution-qa/full-runtime'
 
-out=root/'Çalışma/Dagitim-0.10.0-20261020'
+out=root/'Çalışma/Dagitim-0.10.1-20261020'
 
 out.mkdir(parents=True,exist_ok=True)
 
@@ -40,15 +40,17 @@ with zipfile.ZipFile(companion) as archive:
 
         if sha(target)!=checks[name]:raise RuntimeError('Public runtime hash mismatch')
 
-setup=root/'.release-build/release/bundle/nsis/study-companion_0.10.0_x64-setup.exe'
+setup=root/'.release-build/release/bundle/nsis/study-companion_0.10.1_x64-setup.exe'
 
-shutil.copy2(setup,stage/'DersPusulasi-0.10.0-Kurulum.exe')
+shutil.copy2(setup,stage/'DersPusulasi-0.10.1-Kurulum.exe')
 
 shutil.copy2(root/'scripts/Install-Full.ps1',stage/'Install-Full.ps1')
 
 shutil.copy2(root/'docs/DISTRIBUTION-GUIDE.md',stage/'KURULUM.md')
 
 with (stage/'KURULUM.md').open('a',encoding='utf-8') as guide:guide.write('\nTam pakette Microsoft imzalı Visual C++ x64 kurucusu da vardır. Gerekli sürüm eksikse otomatik çalışır; Windows yönetici izni veya yeniden başlatma isteyebilir. Temiz bilgisayarda bu bağımlılığın kurulum dalı bu bilgisayarda ayrıca denenmiş sayılmaz. Resmi kaynak: https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist/ .\n')
+
+with (stage/'KURULUM.md').open('a',encoding='utf8') as guide:guide.write('\n0.10.1 GitHub güncellemesi: Yönetici paneli > Güncellemeler. Varsayılan depo https://github.com/hizliislerajansi/Egitim . Kontrol internet ister; kurulum yönetici tarafından başlatılır. Yerel sesler çevrimdışı çalışır.\n')
 
 (stage/'TAM-KUR.bat').write_text('@echo off\r\npowershell.exe -NoProfile -ExecutionPolicy Bypass -File "%~dp0Install-Full.ps1"\r\nif errorlevel 1 (echo Kurulum tamamlanamadi. Yukaridaki aciklamayi kontrol edin. & pause & exit /b 1)\r\npause\r\n',encoding='ascii')
 
@@ -66,7 +68,7 @@ for path in stage.rglob('*'):
 
     relative=path.relative_to(stage)
 
-    if len(relative.parts)==1 and path.name not in {'DersPusulasi-0.10.0-Kurulum.exe','Install-Full.ps1','KURULUM.md','TAM-KUR.bat','FULL-SHA256.json','MicrosoftEdgeWebView2RuntimeInstallerX64.exe','VC_redist.x64.exe'}:continue
+    if len(relative.parts)==1 and path.name not in {'DersPusulasi-0.10.1-Kurulum.exe','Install-Full.ps1','KURULUM.md','TAM-KUR.bat','FULL-SHA256.json','MicrosoftEdgeWebView2RuntimeInstallerX64.exe','VC_redist.x64.exe'}:continue
 
     if '__pycache__' in relative.parts or path.suffix in {'.pyc','.pyo'} or path.name=='FULL-SHA256.json':continue
 
@@ -86,7 +88,7 @@ hashes={name:sha(path) for name,path in sorted(files.items())}
 
 (stage/'FULL-SHA256.json').write_text(json.dumps(hashes,indent=2),encoding='utf-8')
 
-archive_path=out/'DersPusulasi-0.10.0-Tam-Kurulum.zip'
+archive_path=out/'DersPusulasi-0.10.1-Tam-Kurulum.zip'
 
 with zipfile.ZipFile(archive_path,'w',zipfile.ZIP_DEFLATED,compresslevel=1,allowZip64=True) as archive:
 
@@ -102,7 +104,7 @@ with zipfile.ZipFile(archive_path) as archive:
 
             if hashlib.file_digest(stream,'sha256').hexdigest()!=digest:raise RuntimeError('Full archive entry mismatch: '+name)
 
-report={'version':'0.10.0','file':archive_path.name,'entries':len(files)+1,'bytes':archive_path.stat().st_size,'sha256':sha(archive_path),'entryHashesVerified':True,'apiKeysIncluded':False,'accountSessionsIncluded':False,'externalPythonRequired':False,'webviewInstallerIncluded':True,'portableSpeechTest':json.loads((root/'docs/full-setup-portable-voice.json').read_text())}
+report={'version':'0.10.1','file':archive_path.name,'entries':len(files)+1,'bytes':archive_path.stat().st_size,'sha256':sha(archive_path),'entryHashesVerified':True,'apiKeysIncluded':False,'accountSessionsIncluded':False,'externalPythonRequired':False,'webviewInstallerIncluded':True,'portableSpeechTest':json.loads((root/'docs/full-setup-portable-voice.json').read_text())}
 
 report['localEnglishSpeechTest']=json.loads((root/'docs/voice-studio-eight-voices.json').read_text())
 report['freshTurkishSpeechTest']=json.loads((root/'docs/voice-studio-turkish-offline.json').read_text())

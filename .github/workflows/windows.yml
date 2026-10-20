@@ -58,5 +58,7 @@ jobs:
           if ($files.Count -ne 1) { throw 'Expected exactly one installer' }
           $checksum = (Get-FileHash -LiteralPath $files[0].FullName -Algorithm SHA256).Hash.ToLowerInvariant() + '  ' + $files[0].Name
           $checksum | Set-Content SHA256.txt -Encoding ascii
+          gh release view $env:GITHUB_REF_NAME *> $null
+          if ($LASTEXITCODE -eq 0) { Write-Output 'Release already published; preserving verified assets.'; exit 0 }
           gh release create $env:GITHUB_REF_NAME $files[0].FullName SHA256.txt --verify-tag --title "DersPusulası $env:GITHUB_REF_NAME" --notes 'Windows uygulama güncellemesi. İlk çevrimdışı kurulum için ayrıca tam paket gerekir. Güncellemeden önce öğrenci yedeği alın.'
           if ($LASTEXITCODE -ne 0) { throw 'Release publication failed' }
