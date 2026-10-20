@@ -1,0 +1,35 @@
+import {useState} from 'react';
+import {ArrowUpRight, BookOpen, Clock, Target, CheckCircle2, Search,Calculator,Languages,Zap,FlaskConical,Dna,Landmark,Globe,HeartHandshake,ShieldPlus,MessageSquareText,CodeXml,type LucideIcon} from 'lucide-react';
+import {getDb} from '../db/database';
+import {readSetting} from '../services/apiClient';
+import {FocusLearningEngine} from '../services/focusLearningEngine';
+import type {ScreenId} from './Sidebar';
+
+export function ProductHome({onNavigate,catalogue=false}:{onNavigate:(screen:ScreenId,subject?:string)=>void;catalogue?:boolean}){
+  const icons:Record<string,LucideIcon>={MATH:Calculator,ENG:Languages,TURK:BookOpen,FIZIK:Zap,KIMYA:FlaskConical,BIYOLOJI:Dna,TARIH:Landmark,COGRAFYA:Globe,DIN:HeartHandshake,SAGLIK:ShieldPlus,ALMANCA:MessageSquareText,BILISIM:CodeXml};
+  const [search,setSearch]=useState('');
+  const db=getDb();
+  const profile=db.queryOne<{name:string;grade:number;daily_goal_minutes:number}>('SELECT * FROM student_profile LIMIT 1');
+  const stats=db.queryOne<{attempts:number;correct:number}>('SELECT COUNT(*) attempts,COALESCE(SUM(is_correct),0) correct FROM answer_attempts');
+  const seconds=db.queryOne<{n:number}>('SELECT COALESCE(SUM(duration_seconds),0) n FROM study_sessions')?.n||0;
+  const reviews=db.queryOne<{n:number}>("SELECT COUNT(*) n FROM review_schedule WHERE status='pending' AND scheduled_date <= ?",[new Date().toLocaleDateString('en-CA')])?.n||0;
+  const current=FocusLearningEngine.current();
+  const today=new Date();const dateKey=`${today.getFullYear()}-${String(today.getMonth()+1).padStart(2,'0')}-${String(today.getDate()).padStart(2,'0')}`;
+  const plan=readSetting<Array<{id:string;title:string;subjectId:string;date:string;time:string;minutes:number;done:boolean}>>('product_plan_v1',[]).filter(t=>t.date===dateKey).sort((a,b)=>a.time.localeCompare(b.time));
+  const selected=readSetting<{subjects:string[]}|null>('product_setup_v1',null);
+  const courses=FocusLearningEngine.subjects().filter(s=>catalogue||!selected||selected.subjects.includes(s.id)).filter(s=>`${s.name} ${s.description}`.toLocaleLowerCase('tr').includes(search.toLocaleLowerCase('tr')));
+  return <div className="product-page">
+    <div className="product-heading"><div><p className="eyebrow">{catalogue?'DERS KATALOĞU':new Intl.DateTimeFormat('tr-TR',{weekday:'long',day:'numeric',month:'long'}).format(new Date())}</p><h1>{catalogue?'Bugün ne öğrenmek istersin?':`Merhaba, ${profile?.name||'öğrenci'} 👋`}</h1><p>{catalogue?'Dersini seç, konuları incele ve kendi hızında ilerle.':FocusLearningEngine.greeting()}</p></div><button className="btn btn-secondary" onClick={()=>onNavigate('schedule')}>Planımı aç <ArrowUpRight size={16}/></button></div>
+    {!catalogue&&<><section className="product-hero"><div><span className="product-tag">SANA AİT ÇALIŞMA ALANI</span><h2>{current&&current.stage!=='ended'?'Kaldığın yerden, küçük bir adımla.':'Bir küçük adım, yeni bir başlangıç.'}</h2><p>Ders anlatımları, kısa alıştırmalar ve notların burada. İnternet olmadan da yerel sorularla çalışabilirsin.</p><button className="btn btn-primary" onClick={()=>onNavigate('focus_study')}>{current&&current.stage!=='ended'?'Çalışmaya devam et':'Kısa çalışmaya başla'} <ArrowUpRight size={18}/></button></div><div className="product-hero-symbol" aria-hidden="true"><BookOpen size={82}/><span>Senin hızında.</span></div></section>
+    <section className="product-stats" aria-label="Kayıtlı ilerlemen">{[{icon:Clock,title:'Çalışma süresi',value:`${Math.floor(seconds/60)} dk`},{icon:CheckCircle2,title:'Yanıtlanan soru',value:String(stats?.attempts||0)},{icon:Target,title:'Doğru yanıt',value:stats?.attempts?`${Math.round(stats.correct/stats.attempts*100)}%`:'Henüz veri yok'},{icon:BookOpen,title:'Bugünkü tekrar',value:String(reviews)}].map(({icon:Icon,title,value})=><article key={title} className="product-stat"><Icon size={20}/><strong>{value}</strong><span>{title}</span></article>)}</section></>}
+    {!catalogue&&<section className="product-card" style={{marginBottom:28}}><div className="product-section-heading"><h2>Bugünkü küçük adımların</h2><button className="btn btn-secondary" onClick={()=>onNavigate('schedule')}>Planı düzenle</button></div>{plan.length?plan.map(t=><div key={t.id} className="product-plan-task"><strong>{t.title}</strong><p>{t.time} · {t.minutes} dakika · {t.done?'Senin işaretlemenle tamamlandı':'Planlandı'}</p><button className="btn btn-secondary" onClick={()=>onNavigate('subject_workshop',t.subjectId)}>Derse git <ArrowUpRight size={15}/></button></div>):<p>Bugün için henüz çalışma eklemedin. İstersen planına kısa bir ders ekleyebilirsin.</p>}</section>}
+    <section aria-labelledby="courses-title"><div className="product-section-heading"><div><h2 id="courses-title">{catalogue?'Dersler ve konular':'Derslerin'}</h2><p>9. sınıf • Yerel içerik arşivi. Güncel müfredat uygunluğu tüm içeriklerde doğrulanmış değildir.</p></div><label className="product-search"><Search size={17}/><input aria-label="Ders ara" value={search} onChange={e=>setSearch(e.target.value)} placeholder="Ders ara…"/></label></div><div className="product-course-grid">{courses.map((s,i)=>{
+      const count=db.queryOne<{n:number}>('SELECT COUNT(*) n FROM topics WHERE subject_id=?',[s.id])?.n||0;
+      const mastery=db.queryOne<{score:number;n:number}>("SELECT AVG(m.mastery_score) score,COUNT(m.id) n FROM topic_mastery m JOIN topics t ON t.id=m.topic_id WHERE t.subject_id=?",[s.id]);
+      const Icon=icons[s.code]||BookOpen;
+      const attempts=db.queryOne<{n:number}>('SELECT COUNT(a.id) n FROM answer_attempts a JOIN questions q ON q.id=a.question_id JOIN topics t ON t.id=q.topic_id WHERE t.subject_id=?',[s.id])?.n||0;
+      return <button className="product-course" key={s.id} onClick={()=>onNavigate('subject_workshop',s.id)}><span className={`product-course-icon tone-${i%4}`} aria-hidden="true">{<Icon size={23}/>}</span><ArrowUpRight size={18} className="course-arrow"/><h3>{s.name}</h3><p>{count} konu • Yerel ders içeriği</p>{attempts&&mastery?.n?<><progress max={100} value={mastery.score} aria-label={`${s.name} konu hâkimiyeti`}/><span>Konu arşivinde %{Math.round(mastery.score)} hâkimiyet</span></>:<span className="product-muted">İlk çalışmanla ilerleme görünür olur</span>}</button>;
+    })}</div>{!courses.length&&<p role="status" className="product-empty">Aramana uygun ders bulunamadı.</p>}</section>
+    {!catalogue&&<section className="product-quick-grid"><article className="product-card"><h2>Yardım her zaman yanında</h2><p>Bir konuyu farklı bir örnekle açıklat veya adım adım ipucu al.</p><button className="btn btn-secondary" onClick={()=>onNavigate('tutor')}>Öğretmenni aç <ArrowUpRight size={16}/></button></article><article className="product-card"><h2>Öğrendiklerini kendi cümlelerinle yaz</h2><p>Notlarını cihazında sakla, istediğinde geri dönüp düzenle.</p><button className="btn btn-secondary" onClick={()=>onNavigate('notes')}>Notlarıma git <ArrowUpRight size={16}/></button></article></section>}
+  </div>;
+}

@@ -1,0 +1,23 @@
+import {beforeAll,describe,it,expect,vi} from 'vitest';
+import {AppDatabase,getDb} from '../db/database';
+import {seedInitialData} from '../db/seed';
+import {createEducationalMaterial as create,diagramSvg,materialIdentity,type MaterialRequest} from '../services/educationalMaterials';
+import {createMedia} from '../services/mediaService';
+import type {Topic} from '../types/database';
+const files=new Map<string,Blob>();
+vi.mock('../services/mediaStorage',()=>({saveMediaBlob:vi.fn(async(id:string,b:Blob)=>{files.set(id,b);}),loadMediaBlob:vi.fn(async(id:string)=>files.get(id)||null)}));
+vi.mock('../services/mediaService',()=>({createMedia:vi.fn(),refreshMediaJob:vi.fn()}));
+const store=new Map<string,string>();Object.defineProperty(globalThis,'localStorage',{value:{getItem:(k:string)=>store.get(k)||null,setItem:(k:string,v:string)=>store.set(k,v)},configurable:true});
+let topic:Topic;
+beforeAll(async()=>{await AppDatabase.getInstance().initialize();await seedInitialData();topic=getDb().queryOne<Topic>('SELECT * FROM topics WHERE subject_id=? ORDER BY order_index LIMIT 1',['subj_math'])!;});
+const request=(patch:Partial<MaterialRequest>={}):MaterialRequest=>({topicId:topic.id,grade:'9',kind:'diagram',method:'local',instructions:'',ratio:'16:9',revision:1,...patch});
+describe('Educational generation and durable reuse',()=>{
+ it('escapes untrusted labels rather than embedding AI or user markup',()=>{const svg=diagramSvg('<script>alert(1)</script>',['<img onerror="run()">']);expect(svg).not.toContain('<script>');expect(svg).not.toContain('<img');expect(svg).toContain('&lt;script&gt;');});
+ it('generates once across concurrent requests and reopens the same saved blob',async()=>{const [a,b]=await Promise.all([create(request()),create(request())]);expect(a.record?.id).toBe(b.record?.id);expect(files.size).toBe(1);const cached=await create(request());expect(cached.reused).toBe(true);expect(cached.record?.verification_status).toBe('estimated');expect(createMedia).not.toHaveBeenCalled();expect(cached.blob?.size).toBeGreaterThan(0);});
+ it('keeps grades, ratio and revision separate in SHA256 identity',async()=>{const base=await materialIdentity(request(),topic);for(const p of [{grade:'10'},{ratio:'1:1' as const},{revision:2}])expect(await materialIdentity(request(p),topic)).not.toBe(base);});
+ it('adds a version without replacing an older file',async()=>{const old=await create(request());const next=await create(request({revision:2}));expect(next.record?.version).toBe(2);expect(next.record?.id).not.toBe(old.record?.id);expect(files.has(old.record!.id)).toBe(true);});
+ it('creates actual worksheets with questions and text alternative',async()=>{const r=await create(request({kind:'worksheet'}));const text=await r.blob!.text();expect(text).toContain('Yanıtın:');expect(r.record?.content_type).toBe('worksheet');expect(r.blob?.type).toContain('text/plain');});
+ it('does not claim a missing file can be reused or silently pay to regenerate it',async()=>{const r=await create(request({revision:3}));files.delete(r.record!.id);await expect(create(request({revision:3}))).rejects.toThrow('dosyası bulunamadı');expect(createMedia).not.toHaveBeenCalled();});
+ it('retains a pending paid video job and never creates it twice',async()=>{vi.mocked(createMedia).mockResolvedValue({remoteId:'operation_fixture'});const req=request({kind:'video',method:'cloud',config:{optionId:'openai_video',model:'sora-2',voice:''}});const first=await create(req);const second=await create(req);expect(first.job?.remoteId).toBe('operation_fixture');expect(second.reused).toBe(true);expect(createMedia).toHaveBeenCalledTimes(1);expect(second.record).toBeUndefined();});
+ it('does not register an empty cloud response as successful material',async()=>{vi.mocked(createMedia).mockResolvedValue({blob:new Blob([],{type:'image/png'})});await expect(create(request({kind:'image',method:'cloud',config:{optionId:'gemini_image',model:'gemini-nano-banana-2.1',voice:''},revision:4}))).rejects.toThrow('boş');});
+});

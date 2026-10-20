@@ -1,0 +1,56 @@
+{
+  "topic_math_equations": {
+    "file": "topic_math_equations.mp4",
+    "title": "Denklemler  Adım Adım",
+    "duration": 461.635918,
+    "sha256": "1ba1c21be4834c3c228128b900d11a7bff916f0d572ad6662a538893bb8efd0c"
+  },
+  "topic_math_sets": {
+    "file": "topic_math_sets.mp4",
+    "title": "Kümeler  Adım Adım Anlatım",
+    "duration": 466.512109,
+    "sha256": "af900bcbe3ce30141ee31672696268e25b477315dbf499ed57991f658ff862d6"
+  },
+  "topic_fizik_motion": {
+    "file": "topic_fizik_motion.mp4",
+    "title": "Hareket ve Newton Yasaları",
+    "duration": 516.551111,
+    "sha256": "614e982484cf2701f623f7088098b3de69736205ff60fc504b1bbe5bf5982c57"
+  },
+  "topic_eng_theme1": {
+    "file": "topic_eng_theme1.mp4",
+    "title": "Selamlaşma ve Tanışma",
+    "duration": 461.264399,
+    "sha256": "c5050a3a57ba18e7f436822a53bdadba795e6b731c74f3cb825e3d95b78beb80"
+  },
+  "topic_eng_theme3": {
+    "file": "topic_eng_theme3.mp4",
+    "title": "Movie Genres   Prefer",
+    "duration": 421.651156,
+    "sha256": "0d58513edaaf0232421360f6e33ad6766ffb029931f74e1f8b7b44a4422ac9b9"
+  },
+  "topic_kimya_atom": {
+    "file": "topic_kimya_atom.mp4",
+    "title": "Atom ve Periyodik Tablo",
+    "duration": 468.578685,
+    "sha256": "a74d53cc44273ddddd71d143679d47fd441c285f6489a0f382d6552a028bc138"
+  },
+  "topic_biyoloji_cell": {
+    "file": "topic_biyoloji_cell.mp4",
+    "title": "Hücre Teorisi ve Organeller",
+    "duration": 456.573968,
+    "sha256": "62b94d46d555af124604b08e2d3f6c9a05078cf74dbcb22a3adf6e6ce6700bc3"
+  },
+  "topic_cografya_coordinates": {
+    "file": "topic_cografya_coordinates.mp4",
+    "title": "Meridyenler ve Yerel Saat",
+    "duration": 403.980771,
+    "sha256": "2d48334e548a51514879dfd1de4ad61e6cf9b9d02dcb53f22cc0b0721a31fd86"
+  },
+  "topic_tarih_ancient": {
+    "file": "topic_tarih_ancient.mp4",
+    "title": "İlk Çağ Uygarlıkları",
+    "duration": 535.568254,
+    "sha256": "5f9a3ffcba259bef698fa341637816a8e760e3238d80ce660acfb3c3ae22e4e9"
+  }
+}

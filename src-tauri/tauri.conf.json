@@ -1,0 +1,74 @@
+{
+  "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
+  "productName": "study-companion",
+  "version": "0.10.1",
+  "identifier": "com.studycompanion.lise1",
+  "build": {
+    "frontendDist": "../dist",
+    "devUrl": "http://localhost:5173",
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "DersPusulası — Kişisel Öğrenme Alanı",
+        "width": 1200,
+        "height": 800,
+        "minWidth": 360,
+        "minHeight": 640,
+        "resizable": true,
+        "fullscreen": false
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://upload.wikimedia.org; media-src 'self' asset: http://asset.localhost https://asset.localhost data: blob: https://translate.google.com; frame-src https://phet.colorado.edu; connect-src 'self' https://api.github.com https://commons.wikimedia.org https://upload.wikimedia.org https://generativelanguage.googleapis.com https://api.openai.com https://openrouter.ai https://api.mistral.ai https://api.z.ai https://api.groq.com https://api.cerebras.ai https://api.together.xyz https://api.together.ai https://api.fireworks.ai https://api.deepseek.com https://router.huggingface.co https://api.cloudflare.com https://api.anthropic.com https://api.elevenlabs.io https://api.cartesia.ai https://evren-llmapi.ssyz.org.tr https://api.dictionaryapi.dev https://translate.google.com http://127.0.0.1:11434 http://127.0.0.1:8880 http://127.0.0.1:7860 http://127.0.0.1:8188",
+      "assetProtocol": {
+        "enable": true,
+        "scope": [
+          "$RESOURCE/lesson-media/**"
+        ]
+      }
+    }
+  },
+  "bundle": {
+    "active": true,
+    "resources": {
+      "../scripts/ema_server.py": "scripts/ema_server.py",
+      "../EMA-Kur.ps1": "EMA-Kur.ps1",
+      "../docs/ema-runtime-lock.txt": "ema-runtime-lock.txt",
+      "../docs/vendor/EMA-LICENSE.txt": "licenses/EMA-LICENSE.txt",
+      "../docs/DISTRIBUTION-GUIDE.md": "KULLANIM.md",
+      "../docs/THIRD-PARTY-NOTICES.txt": "licenses/THIRD-PARTY-NOTICES.txt",
+      "../lesson-media/": "lesson-media/",
+      "../scripts/kitten_server.py": "scripts/kitten_server.py",
+      "../docs/voice-studio-model.json": "docs/voice-studio-model.json",
+      "../docs/vendor/KITTEN-LICENSE.txt": "licenses/KITTEN-LICENSE.txt",
+      "../docs/vendor/VOICE-STUDIO-LICENSE.txt": "licenses/VOICE-STUDIO-LICENSE.txt",
+      "../docs/vendor/PHONEMIZER-GPL-3.txt": "licenses/PHONEMIZER-GPL-3.txt",
+      "../docs/vendor/ESPEAK-GPL-3.txt": "licenses/ESPEAK-GPL-3.txt",
+      "../scripts/vendor/kitten_inference.py": "scripts/vendor/kitten_inference.py",
+      "../scripts/vendor/kitten_preprocess.py": "scripts/vendor/kitten_preprocess.py"
+    },
+    "windows": {
+      "nsis": {
+        "installMode": "currentUser",
+        "languages": [
+          "Turkish",
+          "English"
+        ],
+        "displayLanguageSelector": true
+      }
+    },
+    "targets": [
+      "nsis"
+    ],
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ]
+  }
+}

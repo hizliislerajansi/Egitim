@@ -1,0 +1,10 @@
+import {useState} from 'react';
+import type {AppTheme} from '../types/settings';
+import {readSetting,writeSetting} from '../services/apiClient';
+export interface DisplayPreferences{font:number;contrast:boolean;motion:boolean;}
+export function applyDisplayPreferences(p:DisplayPreferences){document.documentElement.style.setProperty('--reading-scale',String(p.font));document.documentElement.setAttribute('data-high-contrast',String(p.contrast));document.documentElement.setAttribute('data-reduced-motion',String(!p.motion));}
+export function AccessibilityPanel({theme,onThemeChange}:{theme:AppTheme;onThemeChange:(theme:AppTheme)=>void}){
+ const [prefs,setPrefs]=useState<DisplayPreferences>(()=>readSetting('product_display_v1',{font:1,contrast:false,motion:false}));
+ const update=(patch:Partial<DisplayPreferences>)=>{const next={...prefs,...patch};setPrefs(next);writeSetting('product_display_v1',next);writeSetting('reduced_motion',!next.motion);applyDisplayPreferences(next);};
+ return <section className="product-card product-form"><p className="eyebrow">SANA UYGUN GÖRÜNÜM</p><h1>Görünüm ve erişilebilirlik</h1><label>Tema<select value={theme} onChange={e=>onThemeChange(e.target.value as AppTheme)}><option value="light">Açık</option><option value="dark">Koyu</option><option value="system">Sistem tercihi</option></select></label><label>Okuma boyutu<select value={prefs.font} onChange={e=>update({font:Number(e.target.value)})}><option value={1}>Standart</option><option value={1.15}>Büyük</option><option value={1.3}>Çok büyük</option></select></label><label className="product-answer"><input type="checkbox" checked={prefs.contrast} onChange={e=>update({contrast:e.target.checked})}/>Yüksek kontrast</label><label className="product-answer"><input type="checkbox" checked={prefs.motion} onChange={e=>update({motion:e.target.checked})}/>Arayüz animasyonları</label><p>Tab ile düğmeler ve alanlar arasında ilerle. Enter veya Boşluk ile etkinleştir. Mobil menüyü Escape ile kapatabilirsin. Sisteminin azaltılmış hareket tercihi de korunur.</p><p role="status">Tercihler bu cihazda otomatik saklanır.</p></section>;
+}

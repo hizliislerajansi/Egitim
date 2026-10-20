@@ -1,0 +1,7 @@
+import type {TopicLecture} from '../data/topicLectures';
+export function notebookUrl(value:string){
+ const url=new URL(value);if(url.protocol!=='https:'||!['notebooklm.google.com','notebook.google.com'].includes(url.hostname)||url.port||url.username||url.password||!/^\/(?:notebook\/[a-zA-Z0-9_-]+\/?)?$/.test(url.pathname))throw new Error('Yalnız resmi NotebookLM not defteri bağlantısı kullanılabilir.');
+ return url.origin+url.pathname;
+}
+export function notebookLessonSource(lecture:TopicLecture){return [lecture.title,lecture.unit,'Öğrenme hedefi: '+lecture.outcome,'Konu özeti',lecture.summary,'Ana noktalar',...lecture.keyPoints,'Kurallar',...lecture.formulasOrRules.map(r=>r.title+': '+r.content),'Çözümlü örnek',lecture.workedExample.question,...lecture.workedExample.solutionSteps,'Sonuç: '+lecture.workedExample.finalAnswer,'Çalışma yönergesi: Yalnız bu kaynağı temel al. Sakin, sabırlı ve destekleyici bir öğretmen gibi açıkla. Kaynakta olmayan bilgileri kesin bilgi olarak sunma. Kısa örnekler ver ve öğrencinin düşünmesi için durakla.'].join('\n\n');}
+export function downloadNotebookSource(lecture:TopicLecture){const blob=new Blob([notebookLessonSource(lecture)],{type:'text/plain;charset=utf-8'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='NotebookLM-'+lecture.topicId.replace(/[^a-zA-Z0-9_-]/g,'')+'.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}

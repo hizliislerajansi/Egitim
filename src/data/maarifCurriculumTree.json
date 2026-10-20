@@ -1,0 +1,752 @@
+{
+  "system": "MEB Türkiye Yüzyılı Maarif Modeli",
+  "grade": 9,
+  "academic_year": "2024-2025 ve sonrası",
+  "version": "1.0.0",
+  "courses": [
+    {
+      "course_id": "MAT-09",
+      "course_name": "Matematik",
+      "weekly_hours": 6,
+      "themes": [
+        {
+          "theme_number": 1,
+          "theme_title": "Sayılar ve Nicelikler",
+          "subtopics": [
+            "Kümeler ve Küme İşlemleri",
+            "Sayı Kümeleri (Doğal, Tam, Rasyonel, İrrasyonel, Gerçek Sayılar)",
+            "Aralık Kavramı ve Sayı Doğrusunda Gösterim",
+            "Bölünebilme Kuralları ve Asal Çarpanlar",
+            "EBOB ve EKOK Uygulamaları"
+          ],
+          "learning_outcomes": [
+            {
+              "code": "MAT.9.1.1",
+              "description": "Kümeler ile ilgili temel kavramları açıklar; kümelerde birleşim, kesişim, fark ve tümleme işlemlerini kullanarak sembolik mantık bağlaçlarıyla ilişkilendirir."
+            },
+            {
+              "code": "MAT.9.1.2",
+              "description": "Sayı kümelerini (N, Z, Q, Q', R) hiyerarşik olarak modeller ve gerçek sayı alt aralıklarını gösterir."
+            },
+            {
+              "code": "MAT.9.1.3",
+              "description": "Bölünebilme kurallarını mantıksal temellendirmelerle açıklar; EBOB ve EKOK kavramlarını gerçek hayat problemlerinin çözümünde kullanır."
+            }
+          ]
+        },
+        {
+          "theme_number": 2,
+          "theme_title": "Değişimler ve İlişkiler",
+          "subtopics": [
+            "Birinci Dereceden Bir Bilinmeyenli Denklemler",
+            "Birinci Dereceden Bir Bilinmeyenli Eşitsizlikler",
+            "Mutlak Değer Kavramı ve Özellikleri",
+            "Mutlak Değerli Denklem ve Eşitsizlikler",
+            "Birinci Dereceden İki Bilinmeyenli Denklem ve Eşitsizlik Sistemleri"
+          ],
+          "learning_outcomes": [
+            {
+              "code": "MAT.9.2.1",
+              "description": "Birinci dereceden bir ve iki bilinmeyenli denklem ve eşitsizliklerin çözüm kümelerini cebirsel ve grafiksel yöntemlerle belirler."
+            },
+            {
+              "code": "MAT.9.2.2",
+              "description": "Gerçek sayılarda mutlak değer kavramını uzaklık ilişkisi olarak anlamlandırır; mutlak değerli denklem ve eşitsizlikleri modeller."
+            },
+            {
+              "code": "MAT.9.2.3",
+              "description": "Denklem ve eşitsizlik modellerini kullanarak gerçek yaşam durumlarına ilişkin problem kurar ve çözer."
+            }
+          ]
+        },
+        {
+          "theme_number": 3,
+          "theme_title": "Geometrik Şekiller ve Ölçme",
+          "subtopics": [
+            "Doğruda ve Üçgende Açılar",
+            "Üçgende Kenar-Açı Bağıntıları",
+            "Üçgenlerde Eşlik ve Benzerlik Teoremleri",
+            "Üçgende Yardımcı Elemanlar (Açıortay, Kenarortay, Yükseklik)",
+            "Dik Üçgen, Pisagor Teoremi ve Öklid Bağıntıları"
+          ],
+          "learning_outcomes": [
+            {
+              "code": "MAT.9.3.1",
+              "description": "Üçgende açı ve kenar özellikleri arasındaki ilişkileri doğrular; üçgen eşitsizliğini problem çözümlerinde kullanır."
+            },
+            {
+              "code": "MAT.9.3.2",
+              "description": "İki üçgenin eş veya benzer olma koşullarını geometrik akıl yürütmeyle gerekçelendirir ve orantılı uzunluk problemlerini çözer."
+            },
+            {
+              "code": "MAT.9.3.3",
+              "description": "Dik üçgende Pisagor ve Öklid bağıntılarını çıkarır; trigonometrik oranların başlangıç düzeyini dik üçgen bağlamında açıklar."
+            }
+          ]
+        },
+        {
+          "theme_number": 4,
+          "theme_title": "Veri ve Olasılık",
+          "subtopics": [
+            "Merkezi Eğilim Ölçüleri (Aritmetik Ortalama, Tepe Değer/Mod, Ortanca/Medyan)",
+            "Merkezi Yayılım Ölçüleri (Açıklık, Çeyrekler Açıklığı, Standart Sapma)",
+            "Veri Temsil Yöntemleri (Kutu, Histogram, Çizgi ve Daire Grafiği)",
+            "Olayların Olasılığı ve Eş Olası Durumlar"
+          ],
+          "learning_outcomes": [
+            {
+              "code": "MAT.9.4.1",
+              "description": "Bir veri grubuna ilişkin merkezi eğilim ve yayılım ölçülerini hesaplar, karşılaştırır ve istatistiksel çıkarımlarda bulunur."
+            },
+            {
+              "code": "MAT.9.4.2",
+              "description": "Örnek uzay, olay ve eş olası durum kavramlarını modeller; ayrık ve ayrık olmayan olayların olasılıklarını hesaplar."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "course_id": "FIZ-09",
+      "course_name": "Fizik",
+      "weekly_hours": 2,
+      "themes": [
+        {
+          "theme_number": 1,
+          "theme_title": "Fizik Bilimine Giriş",
+          "subtopics": [
+            "Fiziğin Tanımı ve Alt Dalları",
+            "Fiziksel Niceliklerin Sınıflandırılması (Temel ve Türetilmiş, Skaler ve Vektörel)",
+            "Bilimsel Araştırma Merkezleri (TÜBİTAK, TAEK/TENMAK, ASELSAN, CERN, NASA, ESA)"
+          ],
+          "learning_outcomes": [
+            {
+              "code": "FIZ.9.1.1",
+              "description": "Fizik biliminin evrendeki olayları anlama ve modellemedeki önemini açıklar; alt disiplinlerini günlük yaşam örnekleriyle eşleştirir."
+            },
+            {
+              "code": "FIZ.9.1.2",
+              "description": "Fiziksel nicelikleri temel-türetilmiş ve skaler-vektörel olarak analiz eder; SI birim sisteminde doğru birimleri kullanır."
+            }
+          ]
+        },
+        {
+          "theme_number": 2,
+          "theme_title": "Madde ve Özellikleri",
+          "subtopics": [
+            "Kütle, Hacim ve Özkütle Kavramları",
+            "Katı, Sıvı ve Gaz Maddelerin Ayırt Edici Özellikleri",
+            "Dayanıklılık ve Yüzey Gerilimi",
+            "Adezyon ve Kohezyon Kuvvetleri, Kılcallık Olayı"
+          ],
+          "learning_outcomes": [
+            {
+              "code": "FIZ.9.2.1",
+              "description": "Maddelerin ortak ve ayırt edici özelliklerini ilişkilendirir; özkütle formülünü ($d = m/V$) hesaplamalarda kullanır."
+            },
+            {
+              "code": "FIZ.9.2.2",
+              "description": "Sıvılarda adezyon, kohezyon, yüzey gerilimi ve kılcallık olaylarını doğadaki ve teknolojideki örnekleriyle gerekçelendirir."
+            }
+          ]
+        },
+        {
+          "theme_number": 3,
+          "theme_title": "Hareket ve Kuvvet",
+          "subtopics": [
+            "Konum, Alınan Yol, Yer Değiştirme, Sürat ve Hız",
+            "Düzgün Doğrusal Hareket ve Grafikleri",
+            "Kuvvet Kavramı ve Temel Kuvvetler",
+            "Newton'ın Hareket Yasaları (Eylemsizlik, Temel Yasa, Etki-Tepki)",
+            "Sürtünme Kuvveti ve Hareket Üzerindeki Etkisi"
+          ],
+          "learning_outcomes": [
+            {
+              "code": "FIZ.9.3.1",
+              "description": "Cisimlerin hareketini kinematik değişkenlerle modeller; düzgün doğrusal harekete ait konum-zaman ve hız-zaman grafiklerini yorumlar."
+            },
+            {
+              "code": "FIZ.9.3.2",
+              "description": "Dengelenmiş ve dengelenmemiş kuvvetlerin etkisindeki hareketleri Newton'ın Hareket Yasaları ile analiz eder."
+            }
+          ]
+        },
+        {
+          "theme_number": 4,
+          "theme_title": "Enerji",
+          "subtopics": [
+            "İş, Güç ve Enerji İlişkisi",
+            "Kinetik Enerji ve Yer Çekimi Potansiyel Enerjisi",
+            "Mekanik Enerjinin Korunumu",
+            "Verim ve Enerji Tasarrufu"
+          ],
+          "learning_outcomes": [
+            {
+              "code": "FIZ.9.4.1",
+              "description": "Mekanik iş ve güç kavramlarını modeller; kinetik ve potansiyel enerjiyi matematiksel olarak ifade eder."
+            },
+            {
+              "code": "FIZ.9.4.2",
+              "description": "Sürtünmesiz ve sürtünmeli ortamlarda mekanik enerjinin korunumunu ve dönüşümlerini analiz eder."
+            }
+          ]
+        },
+        {
+          "theme_number": 5,
+          "theme_title": "Isı ve Sıcaklık",
+          "subtopics": [
+            "İç Enerji, Sıcaklık ve Isı Kavramları",
+            "Termometre Türleri ve Sıcaklık Ölçekleri",
+            "Öz Isı, Isı Sığası ve Hâl Değişimi",
+            "Isıl Denge ve Isı Aktarım Yolları"
+          ],
+          "learning_outcomes": [
+            {
+              "code": "FIZ.9.5.1",
+              "description": "İç enerji, sıcaklık ve ısı kavramları arasındaki farkı açıklar; termometre dönüşümlerini formüllendirir."
+            },
+            {
+              "code": "FIZ.9.5.2",
+              "description": "Saf maddelerin hâl değişim süreçlerini ısı alışverişi denklemleriyle ($Q = m \\cdot c \\cdot \\Delta T$ ve $Q = m \\cdot L$) hesaplar."
+            }
+          ]
+        },
+        {
+          "theme_number": 6,
+          "theme_title": "Elektrostatik",
+          "subtopics": [
+            "Elektrik Yükleri ve Yüklenme Çeşitleri (Sürtünme, Dokunma, Etki)",
+            "Elektroskop ve İletken-Yalıtkan Maddeler",
+            "Coulomb Yasası ve Noktasal Yüklerin Kuvveti"
+          ],
+          "learning_outcomes": [
+            {
+              "code": "FIZ.9.6.1",
+              "description": "Elektrik yüklerinin özelliklerini ve cisimlerin yüklenme yollarını elektrostatik yasaları çerçevesinde modeller."
+            },
+            {
+              "code": "FIZ.9.6.2",
+              "description": "Noktasal elektrik yükleri arasındaki elektriksel kuvveti Coulomb Yasası ile açıklar."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "course_id": "KIM-09",
+      "course_name": "Kimya",
+      "weekly_hours": 2,
+      "themes": [
+        {
+          "theme_number": 1,
+          "theme_title": "Kimya Bilimi",
+          "subtopics": [
+            "Simyadan Kimyaya Geçiş Süreci",
+            "Kimyanın Disiplinleri ve Başlıca Çalışma Alanları",
+            "Kimya Laboratuvarında Güvenlik Uyarı İşaretleri",
+            "Element ve Bileşik Kavramları, Kimyasal Formüller"
+          ],
+          "learning_outcomes": [
+            {
+              "code": "KIM.9.1.1",
+              "description": "Kimyanın bilim olma sürecini ve simya ile arasındaki temel metodolojik farkları açıklar."
+            },
+            {
+              "code": "KIM.9.1.2",
+              "description": "Kimya uygulamalarında iş sağlığı ve güvenliği kurallarını gerekçeleriyle açıklar; güvenlik piktogramlarını yorumlar."
+            }
+          ]
+        },
+        {
+          "theme_number": 2,
+          "theme_title": "Atom ve Periyodik Sistem",
+          "subtopics": [
+            "Atom Modellerinin Tarihsel Gelişimi (Dalton, Thomson, Rutherford, Bohr)",
+            "Atomun Temel Tanecikleri (Proton, Nötron, Elektron, İzo- Kavramları)",
+            "Periyodik Sistemin Yapısı (Grup ve Periyot Belirleme)",
+            "Periyodik Özelliklerin Değişimi (Atom Yarıçapı, İyonlaşma Enerjisi, Elektronegatiflik, Elektron İlgisi)"
+          ],
+          "learning_outcomes": [
+            {
+              "code": "KIM.9.2.1",
+              "description": "Atom modellerinin tarihsel süreçteki gelişimini deneysel kanıtlarla ilişkilendirir."
+            },
+            {
+              "code": "KIM.9.2.2",
+              "description": "Elementlerin periyodik sistemdeki yerini elektron dağılımı ile belirler; periyodik özelliklerin periyot ve gruplardaki değişim eğilimlerini açıklar."
+            }
+          ]
+        },
+        {
+          "theme_number": 3,
+          "theme_title": "Kimyasal Türler Arası Etkileşimler",
+          "subtopics": [
+            "Kimyasal Tür Kavramı (Atom, Molekül, İyon, Radikal)",
+            "Güçlü Etkileşimler (İyonik, Kovalent ve Metalik Bağ)",
+            "Lewis Elektron Nokta Gösterimi ve Molekül Polarlığı",
+            "Zayıf Etkileşimler (Van der Waals Kuvvetleri ve Hidrojen Bağı)"
+          ],
+          "learning_outcomes": [
+            {
+              "code": "KIM.9.3.1",
+              "description": "Kimyasal türleri sınıflandırır; bağ enerjisi temelinde güçlü ve zayıf etkileşimleri ayırt eder."
+            },
+            {
+              "code": "KIM.9.3.2",
+              "description": "İyonik ve kovalent bağlı bileşiklerin oluşumunu Lewis yapısıyla modeller; zayıf etkileşimlerin maddelerin erime ve kaynama noktalarına etkisini yorumlar."
+            }
+          ]
+        },
+        {
+          "theme_number": 4,
+          "theme_title": "Maddenin Halleri",
+          "subtopics": [
+            "Maddenin Fiziksel Halleri ve Tanecik Dinamiği",
+            "Gazların Genel Özellikleri ve Kinetik Teori",
+            "Sıvılarda Viskozite, Buhar Basıncı ve Kaynama Olayı",
+            "Katı Türleri (Kristal ve Amorf Katılar)"
+          ],
+          "learning_outcomes": [
+            {
+              "code": "KIM.9.4.1",
+              "description": "Maddenin katı, sıvı ve gaz hallerini tanecikler arası çekim kuvveti ve boşluk açısından modeller."
+            },
+            {
+              "code": "KIM.9.4.2",
+              "description": "Sıvılarda viskoziteyi etkileyen faktörleri açıklar; buharlaşma, yoğuşma ve kaynama olaylarını atmosfer basıncıyla ilişkilendirir."
+            }
+          ]
+        },
+        {
+          "theme_number": 5,
+          "theme_title": "Doğa ve Kimya",
+          "subtopics": [
+            "Su ve Hayat (Suyun Varlıklar İçin Önemi, Sert ve Yumuşak Su)",
+            "Çevre Kimyası (Hava, Su ve Toprak Kirleticiler)",
+            "Sera Etkisi, Ozon Tabakasının İncelmesi ve Asit Yağmurları"
+          ],
+          "learning_outcomes": [
+            {
+              "code": "KIM.9.5.1",
+              "description": "Suyun canlılar ve ekosistem için önemini açıklar; su tasarrufu ve arıtma prensiplerini değerlendirir."
+            },
+            {
+              "code": "KIM.9.5.2",
+              "description": "Hava, su ve toprak kirliliğine neden olan kimyasal maddeleri tanımlar ve çevresel sürdürülebilirlik çözümleri önerir."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "course_id": "BIY-09",
+      "course_name": "Biyoloji",
+      "weekly_hours": 2,
+      "themes": [
+        {
+          "theme_number": 1,
+          "theme_title": "Yaşam Bilimi Biyoloji",
+          "subtopics": [
+            "Canlıların Ortak Özellikleri (Hücresel Yapı, Beslenme, Solunum, Boşaltım, Homeostazi vb.)",
+            "İnorganik Bileşikler (Su, Mineraller, Asitler, Bazlar, Tuzlar)",
+            "Organik Bileşikler (Karbonhidratlar, Yağlar/Lipitler, Proteinler, Enzimler, Nükleik Asitler, ATP, Hormonlar)",
+            "Enzimlerin Yapısı ve Çalışmasına Etki Eden Faktörler"
+          ],
+          "learning_outcomes": [
+            {
+              "code": "BIY.9.1.1",
+              "description": "Canlıların ortak özelliklerini biyolojik varoluş ilkeleri doğrultusunda analiz eder."
+            },
+            {
+              "code": "BIY.9.1.2",
+              "description": "İnorganik ve organik bileşiklerin canlı yapısındaki rollerini, enerji ve regülasyon işlevlerini açıklar."
+            },
+            {
+              "code": "BIY.9.1.3",
+              "description": "Enzimlerin biyokimyasal reaksiyonlardaki katalizör işlevini ve reaksiyon hızını etkileyen faktörleri grafiklerle modeller."
+            }
+          ]
+        },
+        {
+          "theme_number": 2,
+          "theme_title": "Hücre",
+          "subtopics": [
+            "Hücre Teorisi ve Mikroskobun Gelişimi",
+            "Prokaryot ve Ökaryot Hücre Mimarisi",
+            "Hücre Zarının Yapısı (Akıcı Mozaik Zar Modeli)",
+            "Hücre Zarından Madde Geçişleri (Pasif Taşıma: Difüzyon, Osmoz; Aktif Taşıma; Endositoz ve Ekzositoz)",
+            "Sitoplazma ve Organeller (Zarsız, Tek Zarlı ve Çift Zarlı Organeller)"
+          ],
+          "learning_outcomes": [
+            {
+              "code": "BIY.9.2.1",
+              "description": "Hücresel yapıları prokaryot-ökaryot ayrımında karşılaştırır; organellerin görevlerini hücresel organizasyon içinde açıklar."
+            },
+            {
+              "code": "BIY.9.2.2",
+              "description": "Hücre zarından madde geçiş yollarını enerji gereksinimi ve derişim gradyanı temelinde deneysel modellerle doğrular."
+            }
+          ]
+        },
+        {
+          "theme_number": 3,
+          "theme_title": "Canlılar Dünyası",
+          "subtopics": [
+            "Canlıların Sınıflandırılması İlkeleri (Doğal/Filogenetik Sınıflandırma, İkili Adlandırma)",
+            "Sınıflandırma Basamakları (Tür, Cins, Familya, Takım, Sınıf, Şube, Âlem)",
+            "Canlı Âlemleri (Bakteriler, Arkeler, Protistler, Bitkiler, Mantarlar, Hayvanlar)",
+            "Virüsler ve Biyolojik Özellikleri"
+          ],
+          "learning_outcomes": [
+            {
+              "code": "BIY.9.3.1",
+              "description": "Canlıların sınıflandırılmasında kullanılan kriterleri ve ikili adlandırma (Binominal Nomenklatür) kurallarını uygular."
+            },
+            {
+              "code": "BIY.9.3.2",
+              "description": "Canlı âlemlerinin temel yapısal ve fizyolojik özelliklerini karşılaştırır; virüslerin canlı-cansız sınırındaki yerini tartışır."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "course_id": "TDE-09",
+      "course_name": "Türk Dili ve Edebiyatı",
+      "weekly_hours": 5,
+      "themes": [
+        {
+          "theme_number": 1,
+          "theme_title": "Giriş ve Dilin İşlevleri",
+          "subtopics": [
+            "Edebiyatın Tanımı ve Güzel Sanatlar İçindeki Yeri",
+            "Edebiyatın Bilim Dallarıyla İlişkisi",
+            "İletişim Ögeleri (Gönderici, Alıcı, İleti, Kanal, Bağlam, Dönüt, Kod)",
+            "Dilin İşlevleri ve Dil-Kültür İlişkisi",
+            "İmla Kuralları ve Noktalama İşaretleri"
+          ],
+          "learning_outcomes": [
+            {
+              "code": "TDE.9.1.1",
+              "description": "Edebiyatın güzel sanatlarla ve diğer bilim disiplinleriyle ilişkisini metinler üzerinden açıklar."
+            },
+            {
+              "code": "TDE.9.1.2",
+              "description": "İletişimin temel ögelerini belirler; dilin göndergesel, heyecana bağlı, kanalı kontrol vb. işlevlerini ayırt eder."
+            }
+          ]
+        },
+        {
+          "theme_number": 2,
+          "theme_title": "Hikâye (Öykü)",
+          "subtopics": [
+            "Hikâyenin Yapı Unsurları (Kişi, Olay, Mekân, Zaman)",
+            "Olay Hikâyesi (Maupassant Tarzı) ve Durum Hikâyesi (Çehov Tarzı)",
+            "Anlatıcı Türleri ve Bakış Açıları (Hâkim, Kahraman, Müşahit)",
+            "İsimler (Adlar) ve Sıfatlar (Ön Adlar)"
+          ],
+          "learning_outcomes": [
+            {
+              "code": "TDE.9.2.1",
+              "description": "Olay ve durum hikâyesi metinlerini tema, kurgu, çatışma ve anlatım teknikleri yönünden karşılaştırır."
+            },
+            {
+              "code": "TDE.9.2.2",
+              "description": "Metindeki isim ve sıfat tamlamalarını bularak metnin anlamına olan katkısını değerlendirir."
+            }
+          ]
+        },
+        {
+          "theme_number": 3,
+          "theme_title": "Şiir",
+          "subtopics": [
+            "Şiirde Şekil ve Ahenk Unsurları (Ölçü, Uyak, Redif, Aliterasyon, Asonans)",
+            "Nazım Birimi (Dize, Beyit, Dörtlük, Bent) ve Kafiye Örgüsü",
+            "İmge, Edebi Sanatlar (Teşbih, İstiare, Teşhis, İntak, Tenasüp, Tezat)",
+            "Zamirler (Adıllar)"
+          ],
+          "learning_outcomes": [
+            {
+              "code": "TDE.9.3.1",
+              "description": "Şiir metinlerindeki ahenk unsurlarını, nazım birimini ve ölçü sistemlerini inceler."
+            },
+            {
+              "code": "TDE.9.3.2",
+              "description": "Şiirde kullanılan edebi sanatları ve imgesel dili çözümleyerek metnin temasıyla ilişkilendirir."
+            }
+          ]
+        },
+        {
+          "theme_number": 4,
+          "theme_title": "Masal ve Fabl",
+          "subtopics": [
+            "Masalın Özellikleri, Bölümleri ve Dünya Masal Geleneği",
+            "Fabl Türü, Yapısı ve Türk Edebiyatındaki İlk Fabl Örnekleri (Harname)",
+            "Zarflar (Belirteçler)"
+          ],
+          "learning_outcomes": [
+            {
+              "code": "TDE.9.4.1",
+              "description": "Masal ve fabl türlerinin evrensel ve ulusal niteliklerini metin analizleriyle açıklar."
+            }
+          ]
+        },
+        {
+          "theme_number": 5,
+          "theme_title": "Roman",
+          "subtopics": [
+            "Roman Türü, Tarihsel Gelişimi ve Hikâyeden Farkları",
+            "Romanda Kurgu, Çatışma ve Tipler / Karakterler",
+            "Edat, Bağlaç ve Ünlem"
+          ],
+          "learning_outcomes": [
+            {
+              "code": "TDE.9.5.1",
+              "description": "Roman metinlerinde olay örgüsü, zaman, mekân ve karakter derinliğini inceler; anlatım biçimlerini değerlendirir."
+            }
+          ]
+        },
+        {
+          "theme_number": 6,
+          "theme_title": "Tiyatro",
+          "subtopics": [
+            "Tiyatro Türünün Doğuşu ve Yapı Unsurları (Sahne, Reji, Diyalog, Monolog)",
+            "Klasik Tiyatro Türleri (Trajedi, Komedi, Dram)",
+            "Fiiller (Eylemler) ve Fiil Çekimi"
+          ],
+          "learning_outcomes": [
+            {
+              "code": "TDE.9.6.1",
+              "description": "Göstermeye bağlı edebi metinler olarak tiyatro türlerini ve dramatik örgüyü çözümler."
+            }
+          ]
+        },
+        {
+          "theme_number": 7,
+          "theme_title": "Öğretici Metinler (Biyografi, Mektup, Günlük)",
+          "subtopics": [
+            "Biyografi, Otobiyografi, Tezkire ve Portre",
+            "Mektup, E-posta ve Açık Mektup Türleri",
+            "Günlük (Günce) ve Blog Türleri"
+          ],
+          "learning_outcomes": [
+            {
+              "code": "TDE.9.7.1",
+              "description": "Kişisel hayatı konu alan öğretici metin türlerini bilgi vericilik ve dil tutumu açısından değerlendirir."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "course_id": "TAR-09",
+      "course_name": "Tarih",
+      "weekly_hours": 2,
+      "themes": [
+        {
+          "theme_number": 1,
+          "theme_title": "Tarih ve Zaman",
+          "subtopics": [
+            "Tarih Biliminin Konusu, Yöntemi ve Kaynakları (Birinci ve İkinci El Kaynaklar)",
+            "Zamanın Taksimi ve Takvim Sistemleri (On İki Hayvanlı, Hicri, Celali, Rumi, Miladi)",
+            "Tarihyazıcılığının Evrimi"
+          ],
+          "learning_outcomes": [
+            {
+              "code": "TAR.9.1.1",
+              "description": "Tarih biliminin doğasını, kaynak inceleme metodolojisini ve nesnellik ilkesini açıklar."
+            },
+            {
+              "code": "TAR.9.1.2",
+              "description": "Türklerin tarih boyunca kullandığı takvimleri gerekçeleri ve astronomik temelleriyle karşılaştırır."
+            }
+          ]
+        },
+        {
+          "theme_number": 2,
+          "theme_title": "İnsanlığın İlk Dönemleri",
+          "subtopics": [
+            "Tarih Öncesi Çağlar (Taş ve Maden Devirleri)",
+            "İlk Çağ Medeniyetleri (Mezopotamya, Mısır, Anadolu, Ege/Yunan, İran, Hint, Çin)",
+            "Hukukun Doğuşu ve İlk Yazılı Kanunlar (Urkagina, Hammurabi Kanunları)"
+          ],
+          "learning_outcomes": [
+            {
+              "code": "TAR.9.2.1",
+              "description": "İlk Çağ medeniyet havzalarının siyasi, ekonomik ve kültürel miraslarını coğrafi çevreleriyle ilişkilendirir."
+            },
+            {
+              "code": "TAR.9.2.2",
+              "description": "Yazının icadının insanlık tarihindeki etkilerini ve ilk yazılı kanunların toplumsal düzen üzerindeki rollerini analiz eder."
+            }
+          ]
+        },
+        {
+          "theme_number": 3,
+          "theme_title": "Orta Çağ’da Dünya",
+          "subtopics": [
+            "Orta Çağ'ın Siyasi Yapıları (Feodalite, Monarşiler, İmparatorluklar)",
+            "Orta Çağ'da Ordu Teşkilatları ve Ticaret Yolları (İpek, Baharat, Kürk Yolları)",
+            "Hukuk Sistemlerinin Gelişimi (Roma Hukuku, Justinianus Kanunları, Cengiz Yasası)"
+          ],
+          "learning_outcomes": [
+            {
+              "code": "TAR.9.3.1",
+              "description": "Orta Çağ dünyasındaki siyasi güç odaklarını, feodal düzeni ve meşruiyet kaynaklarını karşılaştırır."
+            },
+            {
+              "code": "TAR.9.3.2",
+              "description": "Ticaret yollarının dünya ekonomisine ve kültürel etkileşime katkılarını dönemsel haritalarla açıklar."
+            }
+          ]
+        },
+        {
+          "theme_number": 4,
+          "theme_title": "İlk ve Orta Çağlarda Türk Dünyası",
+          "subtopics": [
+            "Orta Asya'nın Coğrafi Özellikleri ve Türk Göçleri",
+            "İlk Türk Devletleri (Asya Hun, I. ve II. Kök Türk, Uygur Devletleri)",
+            "Türklerde Devlet Teşkilatı (Kut İnancı, İkili Teşkilat, Kurultay, Töre)",
+            "Ordu-Millet Anlayışı ve Konar-Göçer Yaşam Kültürü"
+          ],
+          "learning_outcomes": [
+            {
+              "code": "TAR.9.4.1",
+              "description": "İlk Türk devletlerinin siyasi varlıklarını ve boylar federasyonu şeklindeki örgütlenme modellerini açıklar."
+            },
+            {
+              "code": "TAR.9.4.2",
+              "description": "Türk kültür ve medeniyetinin temel unsurları olan töre, kut anlayışı ve konar-göçer bozkır kültürünü çözümler."
+            }
+          ]
+        },
+        {
+          "theme_number": 5,
+          "theme_title": "İslam Medeniyetinin Doğuşu",
+          "subtopics": [
+            "İslamiyet Öncesi Arabistan Yarımadası ve Hicaz Bölgesi",
+            "Hz. Muhammed Dönemi ve İslam Devleti'nin Temelleri",
+            "Dört Halife Dönemi ve Kurumsallaşma",
+            "Emeviler, Abbasiler ve Endülüs Medeniyeti",
+            "İslam Medeniyetinde Bilim, Felsefe ve Sanat"
+          ],
+          "learning_outcomes": [
+            {
+              "code": "TAR.9.5.1",
+              "description": "İslamiyet'in doğuşunu, yayılışını ve devletleşme sürecini temel dönüm noktaları üzerinden analiz eder."
+            },
+            {
+              "code": "TAR.9.5.2",
+              "description": "Emeviler ve Abbasiler dönemlerindeki kurumsal gelişmeleri ve İslam Rönesansı'nın evrensel bilim mirasına etkisini değerlendirir."
+            }
+          ]
+        },
+        {
+          "theme_number": 6,
+          "theme_title": "Türklerin İslamiyet’i Kabulü ve İlk Türk İslam Devletleri",
+          "subtopics": [
+            "Talas Savaşı ve Türklerin İslamiyet'e Girişi",
+            "İlk Türk İslam Devletleri (Karahanlılar, Gazneliler, Büyük Selçuklu Devleti)",
+            "Büyük Selçuklu Devleti Teşkilatı, Nizamiye Medreseleri ve İkta Sistemi",
+            "Malazgirt Zaferi ve Anadolu'nun Türkleşme Süreci"
+          ],
+          "learning_outcomes": [
+            {
+              "code": "TAR.9.6.1",
+              "description": "Türklerin İslamiyet'i kabul etme nedenlerini ve İslam medeniyetine yaptıkları askeri/kültürel katkıları analiz eder."
+            },
+            {
+              "code": "TAR.9.6.2",
+              "description": "Büyük Selçuklu Devleti'nin idari yapısını, Nizamiye Medreseleri ve ikta sisteminin devlet sürekliliğindeki rolünü açıklar."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "course_id": "COG-09",
+      "course_name": "Coğrafya",
+      "weekly_hours": 2,
+      "themes": [
+        {
+          "theme_number": 1,
+          "theme_title": "Doğal Sistemler",
+          "subtopics": [
+            "Coğrafyanın Konusu, Bölümleri ve Doğa-İnsan Etkileşimi",
+            "Dünya'nın Şekli, Günlük ve Yıllık Hareketleri, Eksen Eğikliği",
+            "Coğrafi Koordinat Sistemi (Paralel, Meridyen, Yerel Saat Hesaplamaları)",
+            "Harita Bilgisi ve Projeksiyon Yöntemleri, Ölçek ve İzohipsler",
+            "Atmosfer ve İklim Elemanları (Sıcaklık, Basınç, Rüzgârlar, Nem ve Yağış)"
+          ],
+          "learning_outcomes": [
+            {
+              "code": "COG.9.1.1",
+              "description": "Doğa ve insan arasındaki dinamik etkileşimi coğrafi bakış açısıyla sorgular."
+            },
+            {
+              "code": "COG.9.1.2",
+              "description": "Dünya'nın şekli ve hareketlerinin coğrafi sonuçlarını mevsimler ve güneş ışınlarının geliş açısı üzerinden modeller."
+            },
+            {
+              "code": "COG.9.1.3",
+              "description": "Harita unsurlarını ve izohips eğrilerini kullanarak yeryüzü şekillerini yorumlar; yerel saat ve ölçek hesaplamaları yapar."
+            },
+            {
+              "code": "COG.9.1.4",
+              "description": "Atmosferin katmanlarını ve iklim elemanlarının oluşum mekanizmalarını küresel iklim kuşaklarıyla ilişkilendirir."
+            }
+          ]
+        },
+        {
+          "theme_number": 2,
+          "theme_title": "Beşerî Sistemler",
+          "subtopics": [
+            "İlk Yerleşmeler ve Yerleşmeyi Etkileyen Doğal-Beşerî Faktörler",
+            "Kır ve Şehir Yerleşmelerinin Özellikleri, Fonksiyonel Sınıflandırma",
+            "Türkiye'de Yerleşmelerin Tarihsel Gelişimi ve Dağılışı"
+          ],
+          "learning_outcomes": [
+            {
+              "code": "COG.9.2.1",
+              "description": "Geçmişten günümüze yerleşmelerin kuruluş yerini ve mekânsal gelişimini etkileyen faktörleri analiz eder."
+            },
+            {
+              "code": "COG.9.2.2",
+              "description": "Kırsal ve kentsel yerleşmeleri fonksiyonlarına ve dokularına göre karşılaştırır."
+            }
+          ]
+        },
+        {
+          "theme_number": 3,
+          "theme_title": "Mekânsal Bir Sentez: Türkiye",
+          "subtopics": [
+            "Türkiye'nin Jeopolitik ve Jeostratejik Konumu",
+            "Türkiye'nin Mutlak ve Göreceli Konumunun Coğrafi Sonuçları",
+            "Türkiye'nin Coğrafi Bölgeleri ve Genel Arazi Kabiliyeti"
+          ],
+          "learning_outcomes": [
+            {
+              "code": "COG.9.3.1",
+              "description": "Türkiye'nin konum özelliklerini bölgesel ve küresel ölçekteki stratejik etkileri doğrultusunda değerlendirir."
+            }
+          ]
+        },
+        {
+          "theme_number": 4,
+          "theme_title": "Çevre ve Toplum",
+          "subtopics": [
+            "Doğal Afetlerin Sınıflandırılması (Jeolojik, Meteorolojik, Hidrolojik)",
+            "Deprem, Heyelan, Sel, Çığ ve Erozyon Riskleri",
+            "Doğal Afetlerin İnsan Faaliyetleri Üzerindeki Etkileri ve Afet Yönetimi"
+          ],
+          "learning_outcomes": [
+            {
+              "code": "COG.9.4.1",
+              "description": "Doğal afetlerin oluşum nedenlerini ve mekânsal dağılışını küresel ve ulusal örneklerle analiz eder; afet öncesi, sırası ve sonrasındaki doğru davranış modellerini açıklar."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
